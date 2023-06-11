@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Máximo e Mínimo</title>
+</head>
+<body>
+    <h1>Calculadora de Máximo e Mínimo</h1>
+    <p>Insira quantos valores numéricos quiser e clique em "Adicionar Valor". Quando terminar, clique em "Calcular Máximo e Mínimo".</p>
+    <input type="number" id="num">
+    <button onclick="addValue()">Adicionar Valor</button>
+    <button onclick="calculateMinMax()">Calcular Máximo e Mínimo</button>
+    <h2 id="values"></h2>
+    <h2 id="max"></h2>
+    <h2 id="min"></h2>
+
+    <script>
+        var values = [];
+
+        function addValue() {
+            var num = document.getElementById('num').value;
+            values.push(Number(num));
+            document.getElementById('values').innerHTML = 'Valores: ' + values.join(', ');
+        }
+
+        function calculateMinMax() {
+            var max = Math.max(...values);
+            var min = Math.min(...values);
+            document.getElementById('max').innerHTML = 'Maior valor: ' + max;
+            document.getElementById('min').innerHTML = 'Menor valor: ' + min;
+        }
+    </script>
+</body>
+</html>

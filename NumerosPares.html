@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Números Pares</title>
+</head>
+<body>
+    <h1>Números Pares</h1>
+    <p>Insira um número e clique no botão para ver todos os números pares de 1 até o número inserido e a soma total desses números.</p>
+    <input type="number" id="num" min="1">
+    <button onclick="showEvenNumbers()">Mostrar Números Pares</button>
+    <h2 id="output"></h2>
+    <h2 id="sum"></h2>
+
+    <script>
+        function showEvenNumbers() {
+            var num = document.getElementById('num').value;
+            var output = '';
+            var sum = 0;
+            for (var i = 2; i <= num; i += 2) {
+                output += i + ', ';
+                sum += i;
+            }
+            document.getElementById('output').innerHTML = 'Números pares: ' + output.slice(0, -2);
+            document.getElementById('sum').innerHTML = 'Soma total: ' + sum;
+        }
+    </script>
+</body>
+</html>

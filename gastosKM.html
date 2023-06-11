@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Gastos de Combustível</title>
+</head>
+<body>
+    <h1>Calculadora de Gastos de Combustível</h1>
+    <p>Insira a quilometragem percorrida e o preço do combustível para calcular o gasto total.</p>
+    <div>
+        <label>Quilometragem Percorrida:</label>
+        <input type="number" id="quilometragem" min="0">
+    </div>
+    <div>
+        <label>Preço do Combustível por Litro:</label>
+        <input type="number" id="precoCombustivel" min="0">
+    </div>
+    <button onclick="calculateTotal()">Calcular Gasto Total</button>
+    <h2 id="output"></h2>
+
+    <script>
+        function calculateTotal() {
+            var quilometragem = document.getElementById('quilometragem').value;
+            var precoCombustivel = document.getElementById('precoCombustivel').value;
+            var total = (quilometragem / 8) * precoCombustivel;
+            document.getElementById('output').innerHTML = 'Gasto total com combustível: R$ ' + total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

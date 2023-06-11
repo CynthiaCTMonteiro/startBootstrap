@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Custos de Piso</title>
+</head>
+<body>
+    <h1>Calculadora de Custos de Piso</h1>
+    <p>Insira a largura e o comprimento do cômodo para calcular o custo de assentar o piso.</p>
+    <div>
+        <label>Largura do Cômodo (em metros):</label>
+        <input type="number" id="largura" min="0">
+    </div>
+    <div>
+        <label>Comprimento do Cômodo (em metros):</label>
+        <input type="number" id="comprimento" min="0">
+    </div>
+    <button onclick="calculateTotal()">Calcular Custo Total</button>
+    <h2 id="output"></h2>
+
+    <script>
+        function calculateTotal() {
+            var largura = document.getElementById('largura').value;
+            var comprimento = document.getElementById('comprimento').value;
+            var total = largura * comprimento * 36;
+            document.getElementById('output').innerHTML = 'Custo total para assentar o piso: R$ ' + total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
